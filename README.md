@@ -1,5 +1,5 @@
 ## UE4Dumper(Unreal Engine 4 Dumper)
-Dump Lib libUE4.so from Memory of Game Process and Generate Structure SDK of Supported Game. You can Find Latest Dumped SDK from [HERE](https://github.com/kp7742/UE4Dumper/tree/master/SDKs/)
+Dump Lib libUE4.so from Memory of Game Process and Generate Structure SDK of Supported Game in Android. You can Find Latest Dumped SDK from [HERE](https://github.com/kp7742/UE4Dumper/tree/master/SDKs/)
 
 ## Changelog
 - v0.1: First Release
@@ -15,6 +15,7 @@ Dump Lib libUE4.so from Memory of Game Process and Generate Structure SDK of Sup
 		2) Added 64bit Offsets to Fix 64bit Support
 		3) Updated SDK Generation Method for Faster Dumping
 		4) Short Options has been remove due to conflict with new options
+- v0.7: Fixed Object Dumping issue for PUBG CN(As of Now Tested on GP v1.8.10.8640).
 
 ## Features
 - No need of Ptrace
@@ -34,14 +35,15 @@ Dump Lib libUE4.so from Memory of Game Process and Generate Structure SDK of Sup
  
 ## How to use
 - You can Use latest precompiled Binaries from [HERE](https://github.com/kp7742/UE4Dumper/tree/master/libs/) or You Can build your Own.
-- Needs Root Access or Virtual Space
-- Get Root Shell through Adb or Terminal Apps(type and run: 'su') or Normal Shell into Virtual Space via Terminal Apps
-- For Usage Help: ue4dumper -h
-- For General Usage: ue4dumper <option(s)>
+- Needs Either Root Access or Virtual Space
+- Put Executable in folder like /data/local/tmp (/sdcard not allow to execute binary so don't put it there)
+- Get Either Root Shell through Adb or Terminal Apps(type and run: 'su') or Normal Shell into Virtual Space via Terminal Apps in that folder
+- Give it executable permission with either 'chmod +x ue4dumper' or 'chmod 755 ue4dumper'
+- Run 'ue4dumper -h' For Usage Help
 	```
     ./ue4dumper -h
 	 
-    UE4Dumper v0.6 <==> Made By KMODs(kp7742)
+    UE4Dumper v0.7 <==> Made By KMODs(kp7742)
     Usage: ue4dumper <option(s)>
     Dump Lib libUE4.so from Memory of Game Process and Generate structure SDK for UE4 Engine
     Tested on PUBG Mobile Series
@@ -76,7 +78,7 @@ Dump Lib libUE4.so from Memory of Game Process and Generate Structure SDK of Sup
 - Clone this repo
 - Install Android NDK, if not already.
 - Open Shell/CMD in Project Folder
-- Drag ndk-build of NDK in Shell or CMD and then Execute
+- Drag ndk-build from NDK in Shell or CMD and then Execute
 - Output will be in libs Folder.
 
 ## Credits
